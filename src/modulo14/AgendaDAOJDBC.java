@@ -101,7 +101,8 @@ public class AgendaDAOJDBC extends TabelaJDBC implements AgendaDAO {
 				ag.setId(rs.getInt("id"));
 				ag.setNome(rs.getString("nome"));
 				ag.setCidade(rs.getString("cidade"));
-				ag.setEndereco(rs.getString("telefone"));
+				ag.setEndereco(rs.getString("endereco"));
+				ag.setTelefone(rs.getString("telefone"));
 				l.add(ag);
 			}
 		} catch (SQLException e) {
@@ -112,7 +113,7 @@ public class AgendaDAOJDBC extends TabelaJDBC implements AgendaDAO {
 			m.setCodigo(e.getErrorCode());
 			throw m;
 		}
-		return null;
+		return l;
 	}
 
 	@Override
